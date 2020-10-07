@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= docTitle %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/bubble.css">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  
+</head>
+<body>
+
+<div class="container">
+    <div class="text-center">
+  <img src="https://media.giphy.com/media/S60CrN9iMxFlyp7uM8/giphy.gif" alt="ChatBot" class="img h1">
+  <img src="https://media.giphy.com/media/fLyd6CqqvNtdu1yCQA/giphy.gif" alt="Hello" class="hello-img">
+  <div class="wavy">
+      <span style="--i:1;">M</span>
+      <span style="--i:2;">Y</span>
+      <span>&nbsp;</span>
+      <span style="--i:3;">N</span>
+      <span style="--i:4;">A</span>
+      <span style="--i:5;">M</span>
+      <span style="--i:6;">E</span>
+      <span>&nbsp;</span>
+      <span style="--i:7;">I</span>
+      <span style="--i:8;">S</span>
+      <span>&nbsp;</span>
+      <span style="--i:9;">S</span>
+      <span style="--i:10;">N</span>
+      <span style="--i:11;">O</span>
+      <span style="--i:12;">O</span>
+      <span style="--i:13;">P</span>
+      <span style="--i:14;">Y</span>
+      
+  </div>
+  <a href="admin/add-tickets" style="text-decoration: none;">Let's Go</a>
+  <section>
+
+  </section>
+  
+</div>
+</div>
+
+</body>
+<script type ="text/javascript">
+function createBubble(){
+    const section = document.querySelector('section');
+    const createElement = document.createElement('span');
+    var size = Math.random()* 60;
+    createElement.style.width =  size + 'px';
+    createElement.style.height = size + 'px';
+    createElement.style.left = Math.random() * innerWidth + 'px';
+    section.appendChild(createElement);
+
+
+    setTimeout(()=>{
+        createElement.remove()
+    },4000)
+}
+setInterval(createBubble,100);
+
+    </script>
+</html>

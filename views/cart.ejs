@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= docTitle%></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/tickets.css">
+  <link rel="stylesheet" href="/css/bubble.css">
+  <script type ="text/javascript" src="/css/bubble.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Railway</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><a href="/admin/add-tickets">Add Tickets</a></li>
+        <li><a href="/tickets" >Book Your  Tickets</a></li>
+        <li><a href="/search">Search</a></li>
+        <li class="active"><a href="/cart" >Your booked Tickets</a></li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container">
+   <% if(Cart.length > 0 ){ %>
+    <% for(let cart of Cart){%>
+        <% for(let i=0;i< tic.length ; i = i + 8) {
+            if(cart == tic[i]){%>
+              <div class="Container">
+                <div class="card">
+                    <div class="box">
+                      <div class="content">
+        
+                    <p>Source :-<%=tic[i+1]%></p>
+                    <p>Destination:-<%=tic[i+2]%></p>
+                    <p>Train No:-<%=tic[i+3]%></p>
+                    <p>ArrivalTime:-<%=tic[i+4]%></p>
+                    <p>Deputure Time:-<%=tic[i+5]%></p>
+                    <p>Date :- <%=tic[i+6]%></p>
+                    <p>Price:-<%= tic[i+7]%></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <% }}}} else{ %>
+            <h1>No Iteams are added</h1>
+            <%}%>
+   
+</div>
+<section>
+  
+</section>
+</body>
+
+</html>

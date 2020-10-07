@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= docTitle%></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/tickets.css">
+  <link rel="stylesheet" href="/css/bubble.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Railway</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><a href="/admin/add-tickets">Add Tickets</a></li>
+        <li class="active"><a href="/tickets" >Book Your  Tickets</a></li>
+        <li ><a href="/search" >Search</a></li>
+        <li><a href="/cart">Your booked Tickets</a></li>
+      </ul>
+    </div>
+  </nav>
+  <% let flag = false; %>
+  <div class="container">
+       <% for (let i=1;i < tic.length; i = i+8){ %>
+            <% if(source == tic[i] && destination == tic[i+1] ){ %>
+                <%  flag = true %>
+                <div class="Container">
+                    <div class="card">
+                        <div class="box">
+                          <div class="content">
+                    <p>Source :-<%=tic[i]%></p>
+                    <p>Destination:-<%=tic[i+1]%></p>
+                    <p>Train No:-<%=tic[i+2]%></p>
+                    <p>ArrivalTime:-<%=tic[i+3]%></p>
+                    <p>Deputure Time:-<%=tic[i+4]%></p>
+                    <p>Date :- <%=tic[i+5]%></p>
+                    <p>Price:-<%= tic[i+6]%>&nbsp;Rs/-</p>
+                    <button type="submit"><a href="/admin/<%= tic[i-1]%>">Book</a></button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <% }} %>
+                  <% if(!flag) {%>
+                    <h1>No Booking Found</h1>
+                    <%}%>
+       </div>
+       
+<section>
+
+</section>
+</body>
+<script type ="text/javascript" src="/css/bubble.js"></script>
+</html>

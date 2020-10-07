@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+
+}
+fieldset{
+    text-align: center;
+    justify-content: center;
+    transform: translate(70%,30%);
+    width: 40%;
+}
